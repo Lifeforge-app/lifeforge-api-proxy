@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
@@ -15,6 +16,6 @@ app.use('/*', createProxyMiddleware({
     },
 }));
 
-app.listen(80, () => {
-    console.log('Proxy server is running on port 80');
-});
+const handler = serverless(app);
+
+module.exports.handler = handler
