@@ -8,11 +8,11 @@ app.use(cors());
 
 const targetUrl = 'http://dev.lifeforge.thecodeblog.net:3636'; // replace with your target URL
 
-app.use('/*', createProxyMiddleware({ 
-    target: targetUrl, 
+app.use('/', createProxyMiddleware({
+    target: targetUrl,
     changeOrigin: true,
     pathRewrite: {
-        '^/': '/', // remove base path
+        [`^/`]: '',
     },
 }));
 
