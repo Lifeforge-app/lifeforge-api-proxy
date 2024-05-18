@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
+const port = process.env.PORT || 3001;
+
 const app = express();
 app.use(cors());
 
@@ -15,6 +17,5 @@ app.use('/', createProxyMiddleware({
     },
 }));
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Server is running on port 3000');
-})
+
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
