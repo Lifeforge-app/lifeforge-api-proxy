@@ -2,7 +2,7 @@
   "name": "lifeforge_api_proxy",
   "version": "1.0.0",
   "description": "A proxy server for Lifeforge API",
-  "main": "index.js",
+  "main": "app.js",
   "author": "Melvin Chia",
   "license": "MIT",
   "private": false,
