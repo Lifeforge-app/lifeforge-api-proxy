@@ -7,7 +7,7 @@ const port = process.env.PORT || 3001;
 const app = express();
 const router = express.Router();
 
-const targetUrl = 'http://dev.lifeforge.thecodeblog.net:3636'; // replace with your target URL
+const targetUrl = process.env.TARGET_URL; 
 
 router.use(cors());
 router.use('/', createProxyMiddleware({
@@ -20,4 +20,4 @@ router.use('/', createProxyMiddleware({
 
 app.use('/', router);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Proxy server listening on port ${port}!`));
